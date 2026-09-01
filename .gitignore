@@ -1,0 +1,16 @@
+# Per-user Python environments and caches
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Work directories the pipelines write outside the repo, in case anyone
+# symlinks one in
+.cache/
+
+# macOS / Windows shell debris
+.DS_Store
+Thumbs.db
+
+# Editor scratch
+*.swp

@@ -1,0 +1,209 @@
+Composition {
+	CurrentTime = 0,
+	RenderRange = { 0, 179 },
+	GlobalRange = { 0, 179 },
+	CurrentID = 156,
+	HiQ = true,
+	PlaybackUpdateMode = 0,
+	StereoMode = false,
+	Version = "DaVinci Resolve Studio 21.0.0.0048",
+	SavedOutputs = 0,
+	HeldTools = 0,
+	DisabledTools = 0,
+	LockedTools = 0,
+	AudioOffset = 0,
+	Resumable = true,
+	OutputClips = {
+	},
+	CustomData = { TEMPLATE_ID = "Text+" },
+	Tools = {
+		Template = TextPlus {
+			CtrlWZoom = false,
+			Inputs = {
+				GlobalOut = Input { Value = 179, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				UseFrameFormatSettings = Input { Value = 1, },
+				CharacterSpacing = Input { Value = 0.99, },
+				StyledText = Input {
+					SourceOp = "Follower1",
+					Source = "StyledText",
+				},
+				Font = Input { Value = "SF Pro Display", },
+				Style = Input { Value = "Bold", },
+				Size = Input { Value = 0.09, },
+				VerticalJustificationNew = Input { Value = 3, },
+				HorizontalJustificationNew = Input { Value = 3, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 220, 49.5 } },
+		},
+		MediaOut1 = Saver {
+			Inputs = {
+				Index = Input { Value = "0", },
+				Input = Input {
+					SourceOp = "Template",
+					Source = "Output",
+				}
+			},
+			ViewInfo = OperatorInfo { Pos = { 440, 49.5 } },
+		},
+		Follower1CharacterAngleZ = BezierSpline {
+			SplineColor = { Red = 28, Green = 216, Blue = 243 },
+			CtrlWZoom = false,
+			KeyFrames = {
+				[0] = { -1.5, RH = { 10, -1.5 } },
+				[30] = { 0, LH = { 20.0010001659393, 0 }, RH = { 70, 0 } },
+				[150] = { 0, LH = { 110, 0 }, RH = { 156.665999889374, 0 } },
+				[170] = { -3, LH = { 163.333333333333, -3 } }
+			}
+		},
+		Follower1Opacity1 = BezierSpline {
+			SplineColor = { Red = 179, Green = 28, Blue = 244 },
+			CtrlWZoom = false,
+			KeyFrames = {
+				[0] = { 0, RH = { 5.7, 0.44 } },
+				[30] = { 1, LH = { -0.5, 1 }, RH = { 70, 1 } },
+				[150] = { 1, LH = { 110.001654693617, 0.996078593597424 }, RH = { 170.4, 1.002 } },
+				[170] = { 0, LH = { 163.333333333333, 0 } }
+			}
+		},
+		Follower1Delay = BezierSpline {
+			SplineColor = { Red = 32, Green = 113, Blue = 253 },
+			CtrlWZoom = false,
+			KeyFrames = {
+				[0] = { 1.5, RH = { 10, 1.5 } },
+				[30] = { 2, LH = { 20, 2 }, RH = { 70, 2 } },
+				[150] = { 2, LH = { 110, 2 }, RH = { 158.332499861717, 2 } },
+				[175] = { 1, LH = { 166.667500138283, 1.23608749608199 }, RH = { 186.66260564812, 0.669559506636593 } },
+				[210] = { 0.3, LH = { 198.333333333333, 0.3 } }
+			}
+		},
+		Follower1SoftnessY1 = BezierSpline {
+			SplineColor = { Red = 231, Green = 190, Blue = 243 },
+			CtrlWZoom = false,
+			KeyFrames = {
+				[0] = { 1.8, RH = { 10, 1.8 } },
+				[30] = { 0, LH = { 20, 0 }, RH = { 70, 0 } },
+				[150] = { 0, LH = { 110, 0 }, RH = { 156.665999889374, 0 }, Flags = { Linear = true } },
+				[170] = { 1.5, LH = { 163.333333333333, 1.5 } }
+			}
+		},
+		Path1Displacement = BezierSpline {
+			SplineColor = { Red = 255, Green = 0, Blue = 255 },
+			CtrlWZoom = false,
+			KeyFrames = {
+				[0] = { 0, RH = { 5.6, 0.2 }, Flags = { LockedY = true } },
+				[30] = { 0.5, LH = { -0.100000000000001, 0.5 }, RH = { 70, 0.5 }, Flags = { LockedY = true } },
+				[150] = { 0.5, LH = { 110, 0.500000000000002 }, RH = { 176.664000000016, 0.5 }, Flags = { LockedY = true } },
+				[170] = { 1, LH = { 164.3, 0.76 }, Flags = { LockedY = true } }
+			}
+		},
+		Follower1 = StyledTextFollower {
+			CtrlWZoom = false,
+			Inputs = {
+				Delay = Input {
+					SourceOp = "Follower1Delay",
+					Source = "Value",
+				},
+				Text = Input {
+					Value = StyledText {
+						Value = "20 ANOS"
+					},
+				},
+				TransformRotation = Input { Value = 1, },
+				CharacterAngleZ = Input {
+					SourceOp = "Follower1CharacterAngleZ",
+					Source = "Value",
+				},
+				Opacity1 = Input {
+					SourceOp = "Follower1Opacity1",
+					Source = "Value",
+				},
+				Softness1 = Input { Value = 1, },
+				SoftnessX1 = Input {
+					SourceOp = "Follower1SoftnessX1",
+					Source = "Value",
+				},
+				SoftnessY1 = Input {
+					SourceOp = "Follower1SoftnessY1",
+					Source = "Value",
+				},
+				Offset1 = Input {
+					SourceOp = "Path1",
+					Source = "Position",
+				},
+				Softness2 = Input { Value = 1, },
+				Softness3 = Input { Value = 1, },
+				Softness4 = Input { Value = 1, },
+				Softness5 = Input { Value = 1, },
+				Softness6 = Input { Value = 1, },
+				Softness7 = Input { Value = 1, },
+				Softness8 = Input { Value = 1, }
+			},
+		},
+		Follower1SoftnessX1 = BezierSpline {
+			SplineColor = { Red = 231, Green = 243, Blue = 234 },
+			CtrlWZoom = false,
+			KeyFrames = {
+				[0] = { 1.8, RH = { 10, 1.8 } },
+				[30] = { 0, LH = { 20, 0 }, RH = { 70, 0 } },
+				[150] = { 0, LH = { 110, 0 }, RH = { 156.665999889374, 0 }, Flags = { Linear = true } },
+				[170] = { 1.5, LH = { 163.333333333333, 1.5 } }
+			}
+		},
+		Path1 = PolyPath {
+			DrawMode = "InsertAndModify",
+			CtrlWZoom = false,
+			Inputs = {
+				Displacement = Input {
+					SourceOp = "Path1Displacement",
+					Source = "Value",
+				},
+				PolyLine = Input {
+					Value = Polyline {
+						Points = {
+							{ Linear = true, LockY = true, X = -0.5, Y = -1, RX = 0, RY = 0.166666666666667 },
+							{ Linear = true, LockY = true, X = -0.5, Y = -0.5, LX = 0, LY = -0.166666666666667, RX = 0, RY = 0 },
+							{ Linear = true, LockY = true, X = -0.5, Y = -0.5, LX = 0, LY = 0, RX = 0, RY = -0.166666666666667 },
+							{ Linear = true, LockY = true, X = -0.5, Y = -1, LX = 0, LY = 0.166666666666667 }
+						}
+					},
+				}
+			},
+		}
+	},
+	Frames = {
+	},
+	Prefs = {
+		Comp = {
+			Interactive = {
+				Proxy = {
+					Scale = 1,
+				},
+			},
+			Views = {
+				RightView = {
+					Viewer = {
+						ScaleMode = 1,
+						Layer = ":Default"
+					}
+				},
+			},
+			Paths = {
+				Map = {
+					["ResolveCaches:"] = "",
+				},
+			},
+			FrameFormat = {
+				Rate = 24,
+				GuideRatio = 1.77777777777778,
+				DepthFull = 3,
+				DepthPreview = 3,
+				DepthInteractive = 3,
+			},
+			Unsorted = {
+				GlobalEnd = 179
+			},
+		}
+	},
+}
